@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JOSEANGELITON&CO — Command Center</title>
+    <meta name="theme-color" content="#090b10" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#" aria-label="JOSEANGELITON&CO home">
+          <span class="brand-mark" aria-hidden="true"><span></span></span>
+          <span class="brand-name">JOSEANGELITON<small>&amp;CO</small></span>
+        </a>
+
+        <nav class="nav" aria-label="Main navigation">
+          <button class="nav-item active" data-view="Overview">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h7v7H3zm11 0h7v7h-7zM3 14h7v7H3zm11 0h7v7h-7z"/></svg>
+            <span>Overview</span>
+          </button>
+          <button class="nav-item" data-view="Projects">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5h7l2 2h9v9H3z"/><path d="M3 7.5V5h7l2 2h9v2.5"/></svg>
+            <span>Projects</span>
+            <span class="nav-count">8</span>
+          </button>
+          <button class="nav-item" data-view="Deployments">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M8 15V9l4-2 4 2v6l-4 2z"/></svg>
+            <span>Deployments</span>
+          </button>
+          <button class="nav-item" data-view="Infrastructure">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="2"/><rect x="3" y="14" width="18" height="6" rx="2"/><path d="M7 7h.01M7 17h.01M17 7h1M17 17h1"/></svg>
+            <span>Infrastructure</span>
+          </button>
+          <button class="nav-item" data-view="Analytics">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10m5 10V4m6 16v-7m5 7V7"/></svg>
+            <span>Analytics</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-label">Workspace</div>
+        <nav class="nav compact" aria-label="Workspace navigation">
+          <button class="nav-item" data-view="Team">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span>Team</span>
+          </button>
+          <button class="nav-item" data-view="Settings">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-1.42 1.42-.06-.06a1.7 1.7 0 0 0-1.88-.34 1.7 1.7 0 0 0-1.04 1.56V20h-2v-.48A1.7 1.7 0 0 0 12.36 18a1.7 1.7 0 0 0-1.88.34l-.06.06-1.42-1.42.06-.06A1.7 1.7 0 0 0 9.4 15a1.7 1.7 0 0 0-1.56-1.04H7v-2h.84A1.7 1.7 0 0 0 9.4 10.92a1.7 1.7 0 0 0-.34-1.88l-.06-.06 1.42-1.42.06.06a1.7 1.7 0 0 0 1.88.34A1.7 1.7 0 0 0 13.4 6.4V5h2v1.4a1.7 1.7 0 0 0 1.04 1.56 1.7 1.7 0 0 0 1.88-.34l.06-.06 1.42 1.42-.06.06a1.7 1.7 0 0 0-.34 1.88A1.7 1.7 0 0 0 20.96 12H22v2h-1.04A1.7 1.7 0 0 0 19.4 15z"/></svg>
+            <span>Settings</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="system-status"><span></span> All systems operational</div>
+          <button class="profile" id="profileButton" aria-label="Open account menu">
+            <span class="avatar">JA</span>
+            <span class="profile-copy"><strong>Jose Angel</strong><small>Administrator</small></span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg>
+          </button>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <button class="icon-button menu-button" id="menuButton" aria-label="Toggle menu">
+            <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+          <div class="search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+            <input id="globalSearch" type="search" placeholder="Search projects, deployments..." aria-label="Search" />
+            <kbd>⌘ K</kbd>
+          </div>
+          <div class="topbar-actions">
+            <button class="icon-button" id="notificationButton" aria-label="Notifications">
+              <svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg>
+              <span class="notification-dot"></span>
+            </button>
+            <button class="primary-button" id="newDeployment"><span>＋</span> New deployment</button>
+          </div>
+        </header>
+
+        <section class="content">
+          <div class="page-heading">
+            <div>
+              <p class="eyebrow">COMMAND CENTER</p>
+              <h1 id="pageTitle">Overview</h1>
+            </div>
+            <div class="time-filter">
+              <button class="filter-button" id="timeFilter">Last 24 hours <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5"/></svg></button>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <article class="stat-card">
+              <div class="stat-top"><span>Deployments</span><span class="trend positive">↗ 12.5%</span></div>
+              <div class="stat-value" data-count="248">248</div>
+              <div class="spark-bars" aria-label="Deployment activity">
+                <i style="height:35%"></i><i style="height:48%"></i><i style="height:42%"></i><i style="height:65%"></i><i style="height:54%"></i><i style="height:78%"></i><i style="height:68%"></i><i style="height:88%"></i><i style="height:74%"></i><i style="height:92%"></i><i style="height:84%"></i><i style="height:100%"></i>
+              </div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-top"><span>Active projects</span><span class="trend positive">↗ 8.2%</span></div>
+              <div class="stat-value" data-count="8">8</div>
+              <div class="project-avatars" aria-label="Project team">
+                <span class="mini-avatar blue">NX</span><span class="mini-avatar coral">AP</span><span class="mini-avatar yellow">ST</span><span class="mini-avatar green">CF</span><span class="mini-avatar more">+4</span>
+              </div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-top"><span>Uptime</span><span class="trend positive">↗ 0.04%</span></div>
+              <div class="stat-value">99.98<span>%</span></div>
+              <div class="uptime-track"><span></span></div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-top"><span>Avg. response</span><span class="trend negative">↘ 18ms</span></div>
+              <div class="stat-value">124<span>ms</span></div>
+              <div class="response-scale"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </article>
+          </div>
+
+          <div class="dashboard-grid">
+            <article class="panel performance-panel">
+              <div class="panel-header">
+                <div><p class="panel-kicker">PERFORMANCE</p><h2>Request volume</h2></div>
+                <div class="legend"><span><i class="legend-dot cyan"></i>Requests</span><span><i class="legend-dot muted"></i>Cached</span></div>
+              </div>
+              <div class="chart-wrap">
+                <div class="chart-y"><span>30k</span><span>20k</span><span>10k</span><span>0</span></div>
+                <svg class="chart" viewBox="0 0 760 220" preserveAspectRatio="none" role="img" aria-label="Request volume chart">
+                  <defs>
+                    <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#67dfca" stop-opacity=".24"/>
+                      <stop offset="100%" stop-color="#67dfca" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <g class="grid-lines"><line x1="0" y1="20" x2="760" y2="20"/><line x1="0" y1="77" x2="760" y2="77"/><line x1="0" y1="134" x2="760" y2="134"/><line x1="0" y1="191" x2="760" y2="191"/></g>
+                  <path class="area" d="M0 174 C35 160,55 168,90 148 S145 156,180 130 S235 138,270 112 S325 130,360 102 S415 110,450 88 S505 96,540 70 S595 82,630 54 S700 65,760 38 L760 220 L0 220 Z"/>
+                  <path class="line requests" d="M0 174 C35 160,55 168,90 148 S145 156,180 130 S235 138,270 112 S325 130,360 102 S415 110,450 88 S505 96,540 70 S595 82,630 54 S700 65,760 38"/>
+                  <path class="line cached" d="M0 195 C45 188,70 194,110 180 S165 188,205 170 S260 177,300 158 S350 168,390 150 S445 158,485 140 S540 148,580 130 S635 138,675 120 S720 128,760 108"/>
+                  <g class="chart-marker"><line x1="540" y1="20" x2="540" y2="191"/><circle cx="540" cy="70" r="5"/></g>
+                </svg>
+                <div class="chart-tooltip"><small>14:30</small><strong>24,891</strong><span>requests</span></div>
+                <div class="chart-x"><span>00:00</span><span>04:00</span><span>08:00</span><span>12:00</span><span>16:00</span><span>20:00</span><span>24:00</span></div>
+              </div>
+            </article>
+
+            <article class="panel health-panel">
+              <div class="panel-header">
+                <div><p class="panel-kicker">SYSTEM</p><h2>Infrastructure</h2></div>
+                <button class="text-button" id="manageInfra">Manage <span>→</span></button>
+              </div>
+              <div class="health-score">
+                <div class="score-ring"><span>94</span><small>HEALTH</small></div>
+                <div class="health-details">
+                  <div><span>CPU usage</span><strong>38%</strong></div>
+                  <div class="mini-progress"><span style="width:38%"></span></div>
+                  <div><span>Memory</span><strong>61%</strong></div>
+                  <div class="mini-progress"><span style="width:61%"></span></div>
+                  <div><span>Storage</span><strong>47%</strong></div>
+                  <div class="mini-progress"><span style="width:47%"></span></div>
+                </div>
+              </div>
+              <div class="region-list">
+                <div class="region-row"><span class="region-dot"></span><strong>US East</strong><small>12 nodes</small><em>Healthy</em></div>
+                <div class="region-row"><span class="region-dot"></span><strong>EU West</strong><small>8 nodes</small><em>Healthy</em></div>
+              </div>
+            </article>
+
+            <article class="panel deployments-panel">
+              <div class="panel-header">
+                <div><p class="panel-kicker">LATEST</p><h2>Recent deployments</h2></div>
+                <button class="text-button" id="viewAllDeployments">View all <span>→</span></button>
+              </div>
+              <div class="deployment-list">
+                <div class="deployment-row">
+                  <div class="deployment-icon cyan-icon">N</div>
+                  <div class="deployment-info"><strong>nova-api</strong><span><b>Production</b> · 2m ago</span></div>
+                  <span class="status success">Success</span>
+                  <span class="commit">a8f2c1e</span>
+                  <button class="row-menu" aria-label="Deployment actions">•••</button>
+                </div>
+                <div class="deployment-row">
+                  <div class="deployment-icon purple-icon">A</div>
+                  <div class="deployment-info"><strong>atlas-web</strong><span><b>Staging</b> · 18m ago</span></div>
+                  <span class="status running">Running</span>
+                  <span class="commit">31bd4a7</span>
+                  <button class="row-menu" aria-label="Deployment actions">•••</button>
+                </div>
+                <div class="deployment-row">
+                  <div class="deployment-icon orange-icon">C</div>
+                  <div class="deployment-info"><strong>core-engine</strong><span><b>Production</b> · 1h ago</span></div>
+                  <span class="status success">Success</span>
+                  <span class="commit">e5d09bc</span>
+                  <button class="row-menu" aria-label="Deployment actions">•••</button>
+                </div>
+                <div class="deployment-row">
+                  <div class="deployment-icon pink-icon">S</div>
+                  <div class="deployment-info"><strong>signal-worker</strong><span><b>Production</b> · 3h ago</span></div>
+                  <span class="status failed">Failed</span>
+                  <span class="commit">9c1fea2</span>
+                  <button class="row-menu" aria-label="Deployment actions">•••</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <aside class="drawer" id="activityDrawer" aria-hidden="true">
+      <div class="drawer-header"><div><p class="panel-kicker">ACTIVITY</p><h2>Notifications</h2></div><button class="icon-button" id="closeDrawer" aria-label="Close">×</button></div>
+      <div class="activity-list">
+        <div class="activity-item"><span class="activity-icon success-icon">✓</span><div><strong>nova-api deployed</strong><p>Production deployment completed successfully.</p><small>2 minutes ago</small></div></div>
+        <div class="activity-item"><span class="activity-icon warn-icon">!</span><div><strong>High memory usage</strong><p>EU West-02 crossed the 80% threshold.</p><small>43 minutes ago</small></div></div>
+        <div class="activity-item"><span class="activity-icon info-icon">↗</span><div><strong>Team member added</strong><p>Mia Chen joined the Atlas project.</p><small>2 hours ago</small></div></div>
+      </div>
+    </aside>
+
+    <div class="modal-backdrop" id="deploymentModal" aria-hidden="true">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-header"><div><p class="panel-kicker">DEPLOY</p><h2 id="modalTitle">New deployment</h2></div><button class="icon-button" id="closeModal" aria-label="Close">×</button></div>
+        <form id="deploymentForm">
+          <label>Project<select id="projectSelect"><option>nova-api</option><option>atlas-web</option><option>core-engine</option><option>signal-worker</option></select></label>
+          <label>Environment<select id="environmentSelect"><option>Production</option><option>Staging</option><option>Development</option></select></label>
+          <label>Commit or branch<input id="branchInput" value="main" /></label>
+          <button class="primary-button deploy-submit" type="submit">Start deployment <span>→</span></button>
+        </form>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status"><span>✓</span><div><strong>Deployment started</strong><small id="toastDetail">nova-api is deploying to Production</small></div></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
